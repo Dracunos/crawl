@@ -4217,7 +4217,7 @@ int get_real_mp(bool include_items)
 
     enp = max(enp, 0);
 
-    return enp;
+    return enp + 2; // Gnollcrawl, give base +2 mp
 }
 
 bool player_regenerates_hp()

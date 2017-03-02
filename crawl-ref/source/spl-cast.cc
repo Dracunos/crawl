@@ -834,7 +834,14 @@ bool cast_a_spell(bool check_range, spell_type spell)
     const bool staff_energy = player_energy();
     you.last_cast_spell = spell;
     // Silently take MP before the spell.
-    dec_mp(cost, true);
+    // Gnollcrawl lvl 2 spells empty mana pool
+    if (cost > 1) {
+        dec_mp(you.magic_points);
+        mpr("The demands of this spell deplete your magical energy!");
+    }
+    else {
+        dec_mp(cost, true);
+    }
 
     const spret_type cast_result = your_spells(spell, 0, true);
     if (cast_result == SPRET_ABORT)
