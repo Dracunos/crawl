@@ -2907,7 +2907,7 @@ static monster_type _pick_zot_exit_defender()
 {
     if (one_chance_in(8))
     {
-        return random_choose(MONS_GNOLL_SERGEANT, MONS_GNOLL_SHAMAN);
+        return random_choose(MONS_GNOLL_SERGEANT, MONS_GNOLL_SHAMAN, MONS_KILLER_BEE);
 #ifdef DEBUG_MON_CREATION
         mprf(MSGCH_DIAGNOSTICS, "Create a pandemonium lord!");
 #endif
